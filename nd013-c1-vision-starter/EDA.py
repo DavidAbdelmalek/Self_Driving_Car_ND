@@ -6,10 +6,6 @@ import matplotlib.pyplot as plt
 from collections import Counter
 
 if __name__ == "__main__":
-    # Dictionary of number of classes in each image.
-    directories = ['val/']
-    records = []
-    base_dir = 'data/'
     
     # Average brightness per image
     brightness = []
@@ -22,21 +18,23 @@ if __name__ == "__main__":
     dic_classes = {'vehicle':0,'pedestrian':0,'cyclist':0}
     num_obj_img = []
     
-    for target in directories:
-        records = get_dataset(base_dir + f'{target}*')
+    dataset = get_dataset('/home/workspace/data/preprocessed_data/*.tfrecord')
+    
+    selected_dataset = dataset.shuffle(100,seed=12)
+    selected_dataset = selected_dataset.take(2000)
+    for batch in selected_dataset:
         classes_images = []
-        i = 0 
-        for batch in records:
-            img = batch['image'].numpy()
-            brightness.append(np.mean(img))
+        
+        img = batch['image'].numpy()
+        brightness.append(np.mean(img))
 
-            classes_images.append(len(batch['groundtruth_classes'].numpy()))
-            ground_truth_classes = batch['groundtruth_classes'].numpy()
-            for class_ in ground_truth_classes:
-                class_ = label_map[class_]
-                dic_classes[class_]+=1
+        classes_images.append(len(batch['groundtruth_classes'].numpy()))
+        ground_truth_classes = batch['groundtruth_classes'].numpy()
+        for class_ in ground_truth_classes:
+            class_ = label_map[class_]
+            dic_classes[class_]+=1
             
-            num_obj_img.append(len(ground_truth_classes))
+        num_obj_img.append(len(ground_truth_classes))
           
         
     # Subplots
