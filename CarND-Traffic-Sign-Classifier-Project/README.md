@@ -134,43 +134,27 @@ The image below shows the 10 new images along with their preprocessed versions.!
 As expected we didn't do too well on this limited sample, only 80% accuracy, compared with a 97% on the test set. But that's fine, they were chosen to be difficult for the model to classify. The idea of this sample was to give us more information about where are are getting things wrong.
 
 Looking at the top 5 probabilities will show us how certain, or uncertain, the model was on these two misclassification cases.
-![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/CarND-Traffic-Sign-Classifier-Project/images/display/test_preprocess.png)
-![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/CarND-Traffic-Sign-Classifier-Project/images/display/test_preprocess.png)
+![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/CarND-Traffic-Sign-Classifier-Project/images/display/predict_img_19_Wrong.png)
 
-#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+Int the first case, we can observe that the model had no clue what that sign was and was in doubt amongst several speed limit signs, that have the same shape.
 
-Here are the results of the prediction:
+![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/CarND-Traffic-Sign-Classifier-Project/images/display/predict_img_33_Wrong.png)
+
+However, we can see that in the second case our model was actually in doubt between the correct class and one alternative
+
+Finally, The model was able to correctly guess 8 of the 10 traffic signs and here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
-
-
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
-
-#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
-
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
-
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
-
-
-For the second image ... 
-
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-#### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+| Right-of-way at the next intersection      		| Right-of-way at the next intersection   									| 
+| Dangerous curve to the left     			| Bumpy road 										|
+| End of all speed					| End of all speed											|
+| General caution	      		| General caution					 				|
+| 30km/h		|30km/h      							|
+| 60km/h		|60km/h      							|
+| Traffic signals		|Traffic signals      							|
+| Road work		|Road work      							|
+| Turn right ahead		|Ahead only      							|
 
 
 
