@@ -1,9 +1,8 @@
-import os
-import glob
 from utils import get_dataset
 import numpy as np
 import matplotlib.pyplot as plt
 from collections import Counter
+import seaborn as sns
 
 def plot_target(dist, plot_type, title):
     """
@@ -16,9 +15,9 @@ def plot_target(dist, plot_type, title):
     
     f, ax = plt.subplots(1, figsize=(12, 4))
     if plot_type == 'bar':
-        ax.bar(dist.keys(), dist.values())
+        sns.barplot(list(dist.keys()), list(dist.values()), alpha=0.8)
     else:
-        ax.hist(dist)
+        sns.histplot(data=dist, bins=50,color="red")
     
     ax.set_title(f"Total {title}")
     plt.savefig(f"images/{title}.png")
@@ -34,11 +33,11 @@ if __name__ == "__main__":
                  4:'cyclist'}
     
     dic_classes = {'vehicle':0,'pedestrian':0,'cyclist':0}
-    scence_type = {'day':0,'night':0}
+    scene_type = {'day':0,'night':0}
     
     num_obj_img = []
     
-    dataset = get_dataset('/home/workspace/data/preprocessed_data/*.tfrecord')
+    dataset = get_dataset('/home/workspace/data/train/*.tfrecord')
     
     selected_dataset = dataset.shuffle(100,seed=12)
     selected_dataset = selected_dataset.take(20000)
@@ -56,16 +55,16 @@ if __name__ == "__main__":
             
         num_obj_img.append(len(ground_truth_classes))
         
-        # check scence 
+        # check scenes 
         th = np.sum(np.sum(img))/(640*640*3)
         
         if th > 50:
-            scence_type['day']+=1
+            scene_type['day']+=1
         else:
-            scence_type['night']+=1
+            scene_type['night']+=1
           
     # Plotting
     plot_target(brightness  ,'hist' ,'brightness')
     plot_target(num_obj_img ,'hist' ,'object_per_image')
     plot_target(dic_classes ,'bar'  ,'class_distribution')
-    plot_target(scence_type ,'bar'  ,'scences')
+    plot_target(scene_type ,'bar'  ,'scences')
