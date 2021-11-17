@@ -147,43 +147,26 @@ The result of data augmentation is reflected directly on the distribiution of cl
 
 My final model consisted of the following layers:
 
-  
+My final model consisted of the following layers:
 
-| Layer | Description | outputs
-
-|:---------------------:|:---------------------------------------------:| -:|
-
-| Input | 32x32x3 RGB image |
-
-| Convolution 5x5 | 1x1 stride, same padding,, depth of 32 | 28x28x32
-
-| RELU | Non-linear activation function |
-
-| Max pooling | 2x2 kernel, stride of 2, valid padding | 14x14x32
-
-| Convolution 5x5 | 1x1 stride, same padding,, depth of 64 | 10x10x64
-
-| RELU | Non-linear activation function |
-
-| Max pooling | 2x2 kernel, stride of 2, valid padding | 5x5x64
-
-| Flatten | converting the data into a 1-dimensional array |
-
-| Dropout | randomly deactivate set of neurons to 0 |
-
-| Fully connected | 1600 hidden neurons |1600
-
-| Dropout | randomly deactivate set of neurons to 0 |
-
-| Fully connected | 120 hidden neurons |120
-
-| Dropout | randomly deactivate set of neurons to 0 |
-
-| Fully connected | 84 hidden neurons |84
-
-| Dropout |randomly deactivate set of neurons to 0 |
-
-|Softmax | output layer calculating final logits corresponding to target classes | 43
+| Layer         		|     Description	        					| outputs
+|:---------------------:|:---------------------------------------------:| -:| 
+| Input         		| 32x32x3 RGB image   							|    
+| Convolution 5x5     	| 1x1 stride, same padding,, depth of 32 	    | 28x28x32
+| RELU					|	Non-linear activation function 								 |
+| Max pooling	      	| 2x2 kernel, stride of 2, valid padding 		 | 14x14x32
+| Convolution 5x5     	| 1x1 stride, same padding,, depth of 64 	     | 10x10x64
+| RELU					|	Non-linear activation function 					 |
+| Max pooling	      	| 2x2 kernel, stride of 2, valid padding 		 | 5x5x64
+| Flatten	            | converting the data into a 1-dimensional array |    
+| Dropout	            | randomly deactivate set of neurons to 0 |     									
+| Fully connected		| 1600 hidden neurons        					 |1600
+| Dropout	            | randomly deactivate set of neurons to 0 |   
+| Fully connected		| 120 hidden neurons        					 |120 
+| Dropout	            | randomly deactivate set of neurons to 0 |   
+| Fully connected		| 84 hidden neurons        					 |84
+| Dropout	            |randomly deactivate set of neurons to 0  |    
+|Softmax				| output layer calculating final logits corresponding to target classes 		     | 43
 
 **Hyperparameters** :
 
@@ -284,37 +267,23 @@ Finally, The model was able to correctly guess 8 of the 10 traffic signs and her
 
   
 
-| Image | Prediction |
+Finally, The model was able to correctly guess 8 of the 10 traffic signs and here are the results of the prediction:
 
-|:---------------------:|:---------------------------------------------:|
+| Image			        |     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| Right-of-way at the next intersection      		| Right-of-way at the next intersection   									| 
+| Dangerous curve to the left     			| Bumpy road 										|
+| End of all speed					| End of all speed											|
+| General caution	      		| General caution					 				|
+| 30km/h		|30km/h      							|
+| 60km/h		|60km/h      							|
+| Traffic signals		|Traffic signals      							|
+| Road work		|Road work      							|
+| Turn right ahead		|Ahead only      							|
 
-| Right-of-way at the next intersection | Right-of-way at the next intersection |
 
-| Dangerous curve to the left | Bumpy road |
 
-| End of all speed | End of all speed |
-
-| General caution | General caution |
-
-| 30km/h |30km/h |
-
-| 60km/h |60km/h |
-
-| Traffic signals |Traffic signals |
-
-| Road work |Road work |
-
-| Turn right ahead |Ahead only |
-
-  
-  
-  
-
-References
-
----
-
-  
+## References
 
 [1] [Multi-Column Deep Neural Network for Traffic Sign
 
