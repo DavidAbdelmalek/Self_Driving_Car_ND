@@ -263,10 +263,8 @@ However, we can see that in the second case our model was actually in doubt betw
 
 Below, you can find examples of how our model correctly predicts testing images:
 
-[![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/german_traffic_sign_classifier/images/display/predict_img_11_Correct.png)](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/german_traffic_sign_classifier/images/display/predict_img_11_Correct.png)[![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/german_traffic_sign_classifier/images/display/predict_img_12_Correct.png)](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/german_traffic_sign_classifier/images/display/predict_img_12_Correct.png)
-
+[![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/german_traffic_sign_classifier/images/display/predict_img_11_Correct.png)](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/german_traffic_sign_classifier/images/display/predict_img_11_Correct.png)
   
-
 [![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/german_traffic_sign_classifier/images/display/predict_img_18_Correct.png)](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/german_traffic_sign_classifier/images/display/predict_img_18_Correct.png)[![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/german_traffic_sign_classifier/images/display/predict_img_1_Correct.png)](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/german_traffic_sign_classifier/images/display/predict_img_1_Correct.png)
 
 Finally, The model was able to correctly guess 8 of the 10 traffic signs and here are the results of the prediction:
