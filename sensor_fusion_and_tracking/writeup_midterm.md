@@ -35,13 +35,13 @@ we will create the BEV map by first discretizing the cells and then converting t
 2. #### Compute intensity layer of bev-map
 After we have created BEV coordinate transformation, we re-arrange elements in BEV by `x`, then `y`, then by decreasing `height` using `numpy.lexsort` in order to assign the intensity value of the top-most lidar point to the respective BEV pixel. Then, extract all points with identical `x` and `y` such that only the top-most z-coordinate is kept (use `numpy.unique`). Finally, normalized corresponding intensity value and mapped to 8-bit scale are taken into account.
 
-![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/71c679a2317558b6859b4cd3175f7c29c9cc44e8/sensor_fusion_and_tracking/img/bev_intensity.png)
+![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/bev_intensity.png)
 
 
 ----
 3. #### Compute height layer of bev-map
 Same as we did for intensity map computation, the top-most z value in each cell is picked up and normalized with the difference between the maximum and the minimum height. The visualization of height map is shown below. 
-![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/71c679a2317558b6859b4cd3175f7c29c9cc44e8/sensor_fusion_and_tracking/img/bev_height.png)
+![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/bev_height.png)
 
 ----
 ### Model-based Object Detection in BEV Image
