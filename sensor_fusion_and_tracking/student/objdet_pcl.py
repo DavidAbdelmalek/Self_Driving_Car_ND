@@ -166,7 +166,7 @@ def bev_from_pcl(lidar_pcl, configs):
     img_intensity = intensity_map * 256
     img_intensity = img_intensity.astype(np.uint8)
     cv2.imshow('img_intensity', img_intensity)
-    cv2.imwrite('img_intensity.png', img_intensity)
+    cv2.imwrite('bev_intensity.png', img_intensity)
     cv2.destroyAllWindows()
     
     #######
@@ -189,7 +189,7 @@ def bev_from_pcl(lidar_pcl, configs):
     img_height = height_map * 256
     img_height = img_height.astype(np.uint8)
     cv2.imshow('img_height', img_height)
-    cv2.imwrite('img_height.png', img_height)
+    cv2.imwrite('bev_height.png', img_height)
     cv2.destroyAllWindows()
     
     #######
