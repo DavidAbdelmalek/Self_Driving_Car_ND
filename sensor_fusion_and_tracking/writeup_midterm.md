@@ -2,8 +2,8 @@
 # 3D object detection
 
 
-| Lidar 3D points                 | 3D object detection in BEV | Real-World Frame |
-|:-------------------------------------:|:-------------------------------------:|:---|
+| Lidar 3D points                 | 3D object detection in BEV |     Real-World Frame        |
+|:-------------------------------------:|:-------------------------------------:|-------------------------------------|
 | <img src="https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/3d_lidarPoints.png" width="600" height="350"> | <img src="https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/bev_lidar.png" width="600" height="350"> | <img src="https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/real_img.png" width="600" height="350">
 
 
