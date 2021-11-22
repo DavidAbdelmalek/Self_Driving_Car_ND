@@ -141,7 +141,6 @@ def bev_from_pcl(lidar_pcl, configs):
     # Compute intensity layer of the BEV map
     ####### ID_S2_EX2 START #######     
     #######
-    print("student task ID_S2_EX2")
     
     ## step 1 : create a numpy array filled with zeros which has the same dimensions as the BEV map
     intensity_map = np.zeros((configs.bev_height + 1, configs.bev_width + 1))
@@ -166,7 +165,7 @@ def bev_from_pcl(lidar_pcl, configs):
     img_intensity = intensity_map * 256
     img_intensity = img_intensity.astype(np.uint8)
     cv2.imshow('img_intensity', img_intensity)
-    cv2.imwrite('bev_intensity.png', img_intensity)
+    cv2.imwrite('img_intensity.png', img_intensity)
     cv2.destroyAllWindows()
     
     #######
@@ -189,7 +188,7 @@ def bev_from_pcl(lidar_pcl, configs):
     img_height = height_map * 256
     img_height = img_height.astype(np.uint8)
     cv2.imshow('img_height', img_height)
-    cv2.imwrite('bev_height.png', img_height)
+    cv2.imwrite('img_height.png', img_height)
     cv2.destroyAllWindows()
     
     #######
@@ -214,6 +213,7 @@ def bev_from_pcl(lidar_pcl, configs):
 
     bev_maps = torch.from_numpy(bev_maps)  # create tensor from birds-eye view
     input_bev_maps = bev_maps.to(configs.device, non_blocking=True).float()
+    
     return input_bev_maps
 
 
