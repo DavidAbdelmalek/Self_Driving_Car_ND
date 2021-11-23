@@ -143,9 +143,6 @@ The result of data augmentation is reflected directly on the distribiution of cl
 
 ### Model Architecture
 
-  
-
-My final model consisted of the following layers:
 
 My final model consisted of the following layers:
 
