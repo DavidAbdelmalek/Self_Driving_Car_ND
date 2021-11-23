@@ -62,9 +62,9 @@ The implementation can be found in  `load_configs_model`,  `create_model`  and  
 The model-based detection of objects in lidar point-clouds using deep-learning is a heavily researched area. The model selected is  [Super Fast and Accurate 3D Object Detection based on 3D LiDAR Point Clouds](https://github.com/maudzung/SFA3D).
 
 The necessary configuration arguments for `fpn_resnet` are picked up and integrated into our codes. The input BEV map computed in the previous section is fed into the model for object inference and outputs further are decoded and post-processed. Finally, the bounding box information of detect objects in the BEV map can be acquired. For  `fpn_resnet`, the detection parameters of each bounding box in BEV map are structured as  `[score, x, y, z, h, w, l, yaw]`, where  `x, y`  (pixel coordinate),  `w, l`  (width and height),  `yaw`  (orientation angle) can be used to draw the predicted 2D bounding box. Below, you can find an example of detection output from `fpn_resnet`
-[
-![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/example-detections-data.png) 
-](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/example-detections-data.png)
+
+![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/example-detections-data.png)
+
 
 ----------
 
