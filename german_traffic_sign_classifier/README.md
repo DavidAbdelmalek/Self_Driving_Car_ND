@@ -282,7 +282,7 @@ Finally, The model was able to correctly guess 8 of the 10 traffic signs and her
 
 ## References
 
-[1] [Multi-Column Deep Neural Network for Traffic Sign
+[1] [Multi-Column Deep Neural Network for Traffic Sign]
 
 Classification](http://people.idsia.ch/~juergen/nn2012traffic.pdf)
 
