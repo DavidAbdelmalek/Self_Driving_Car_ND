@@ -61,5 +61,5 @@ if __name__ == "__main__":
 
     logger = get_module_logger(__name__)
     logger.info('Creating splits...')
-    split(data_dir = args.data_dir,train_size = 80,test_size = 10,val_size = 10)
+    split(data_dir = args.data_dir,train_size = 75,test_size = 15 ,val_size = 10)
  
