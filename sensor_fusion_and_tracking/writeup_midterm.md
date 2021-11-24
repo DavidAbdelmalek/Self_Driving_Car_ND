@@ -89,7 +89,7 @@ To evaluate the performance of Object Detection, we compute the geometrical boun
 - **True Positives (TP)**: It shows the number of correctly classified objects in defined area. 
 - **False Negatives (FN)**: It is the number of undetected objects
 - **False Positives (FP)**: It represents the number of incorrect object predictions.
-
+----------
 #### 3. Compute precision and recall (`compute_performance_stats`  func. in  [objdet_pcl.py](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/blob/main/sensor_fusion_and_tracking/student/objdet_eval.py))
 
 We compute  `precision`  and  `recall`  by processing around 100 frames in a image sequence. The  `precision`  is 1.0, and the  `recall`  is 0.67. The performance measures are plotted below:
