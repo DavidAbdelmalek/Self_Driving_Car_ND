@@ -2,8 +2,8 @@
 # 3D object detection
 
 
-| Lidar 3D points                 | 3D object detection in BEV |     Real-World Frame        |
-|:-------------------------------------:|:-------------------------------------:|-------------------------------------|
+| Lidar 3D points                 | 3D object detection in BEV | Real-World Frame |
+|:-------------------------------------:|:-------------------------------------:|:---|
 | <img src="https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/3d_lidarPoints.png" width="600" height="350"> | <img src="https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/bev_lidar.png" width="600" height="350"> | <img src="https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/real_img.png" width="600" height="350">
 
 
@@ -62,9 +62,9 @@ The implementation can be found in  `load_configs_model`,  `create_model`  and  
 The model-based detection of objects in lidar point-clouds using deep-learning is a heavily researched area. The model selected is  [Super Fast and Accurate 3D Object Detection based on 3D LiDAR Point Clouds](https://github.com/maudzung/SFA3D).
 
 The necessary configuration arguments for `fpn_resnet` are picked up and integrated into our codes. The input BEV map computed in the previous section is fed into the model for object inference and outputs further are decoded and post-processed. Finally, the bounding box information of detect objects in the BEV map can be acquired. For  `fpn_resnet`, the detection parameters of each bounding box in BEV map are structured as  `[score, x, y, z, h, w, l, yaw]`, where  `x, y`  (pixel coordinate),  `w, l`  (width and height),  `yaw`  (orientation angle) can be used to draw the predicted 2D bounding box. Below, you can find an example of detection output from `fpn_resnet`
-
-![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/example-detections-data.png)
-
+[
+![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/example-detections-data.png) 
+](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/example-detections-data.png)
 
 ----------
 
@@ -77,3 +77,30 @@ After we obtain the detected object's information associated with the BEV map, w
 
 ----
 ### Performance Evaluation for Object Detection
+
+#### 1. Compute intersection-over-union between labels and detections (`measure_detection_performance`  func. in  [objdet_pcl.py](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/blob/main/sensor_fusion_and_tracking/student/objdet_eval.py))
+
+To evaluate the performance of Object Detection, we compute the geometrical bounding box overlap between ground-truth labels and detected objects. The min. IOU is set to 0.5. The object corners can be obtained based on  `x, y, w, l, yaw`. Then the intersection over union (IOU) between label and detected bounding box can be computed. In case of multiple matches, only the object/label pair with max. IOU is kept, and the true positives count is accumulated if the IOU value of a object/label is greater than min. IOU threshold. 
+
+----------
+
+#### 2. Compute false-negatives and false-positives (`measure_detection_performance`  func. in  [objdet_pcl.py](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/blob/main/sensor_fusion_and_tracking/student/objdet_eval.py))
+
+- **True Positives (TP)**: It shows the number of correctly classified objects in defined area. 
+- **False Negatives (FN)**: It is the number of undetected objects
+- **False Positives (FP)**: It represents the number of incorrect object predictions.
+
+#### 3. Compute precision and recall (`compute_performance_stats`  func. in  [objdet_pcl.py](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/blob/main/sensor_fusion_and_tracking/student/objdet_eval.py))
+
+We compute  `precision`  and  `recall`  by processing around 100 frames in a image sequence. The  `precision`  is 1.0, and the  `recall`  is 0.67. The performance measures are plotted below:
+
+Measurements              |  Count
+:-------------------------:|:-------------------------:
+TP  |  205
+FN  |  101
+FP  |  0
+
+
+[![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/preformance_evaluation.png)](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/preformance_evaluation.png)
+
+

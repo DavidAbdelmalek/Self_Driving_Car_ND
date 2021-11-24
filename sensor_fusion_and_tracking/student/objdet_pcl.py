@@ -165,7 +165,6 @@ def bev_from_pcl(lidar_pcl, configs):
     img_intensity = intensity_map * 256
     img_intensity = img_intensity.astype(np.uint8)
     cv2.imshow('img_intensity', img_intensity)
-    cv2.imwrite('img_intensity.png', img_intensity)
     cv2.destroyAllWindows()
     
     #######

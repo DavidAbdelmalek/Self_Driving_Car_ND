@@ -135,7 +135,10 @@ def load_configs(model_name='fpn_resnet', configs=None):
     # visualization parameters
     configs.output_width = 608 # width of result image (height may vary)
     configs.obj_colors = [[0, 255, 255], [0, 0, 255], [255, 0, 0]] # 'Pedestrian': 0, 'Car': 1, 'Cyclist': 2
-
+    
+    # minimum iou
+    configs.min_iou = 0.5
+    
     return configs
 
 
