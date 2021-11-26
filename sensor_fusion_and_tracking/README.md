@@ -11,7 +11,7 @@ In this project, you'll fuse measurements from LiDAR and camera and track vehicl
 <img src="img/img_title_1.jpeg"/>
 
 The project consists of two major parts: 
-1. **[Object detection](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/blob/38a9410bdf15e78a2935d0a246ca61f5b1038a54/sensor_fusion_and_tracking/writeup_midterm.md)**: In this part, a deep-learning approach is used to detect vehicles in LiDAR data based on a birds-eye view perspective of the 3D point-cloud. Also, a series of performance measures is used to evaluate the performance of the detection approach. 
+1. **[Object detection](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/blob/main/sensor_fusion_and_tracking/writeup_midterm.md)**: In this part, a deep-learning approach is used to detect vehicles in LiDAR data based on a birds-eye view perspective of the 3D point-cloud. Also, a series of performance measures is used to evaluate the performance of the detection approach. 
 2. **Object tracking** : In this part, an extended Kalman filter is used to track vehicles over time, based on the lidar detections fused with camera detections. Data association and track management are implemented as well.
 
 The following diagram contains an outline of the data flow and of the individual steps that make up the algorithm. 
