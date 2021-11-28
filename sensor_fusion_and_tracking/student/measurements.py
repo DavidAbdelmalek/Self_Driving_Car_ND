@@ -44,11 +44,13 @@ class Sensor:
     def in_fov(self, x):
         # check if an object x can be seen by this sensor
         ############
-        # TODO Step 4: implement a function that returns True if x lies in the sensor's field of view, 
+        # Step 4: implement a function that returns True if x lies in the sensor's field of view, 
         # otherwise False.
         ############
-
-        return True
+        pos_sens = self.veh_to_sens[:3,:3] * x[:3]
+        alpha =  np.arctan(pos_sens[1]/pos_sens[0])[0]
+    
+        return alpha > self.fov[0] and alpha < self.fov[1]
         
         ############
         # END student code
@@ -64,18 +66,12 @@ class Sensor:
         elif self.name == 'camera':
             
             ############
-            # TODO Step 4: implement nonlinear camera measurement function h:
+            # Step 4: implement nonlinear camera measurement function h:
             # - transform position estimate from vehicle to camera coordinates
             # - project from camera to image coordinates
             # - make sure to not divide by zero, raise an error if needed
             # - return h(x)
             ############
-
-            pass
-        
-            ############
-            # END student code
-            ############ 
         
     def get_H(self, x):
         # calculate Jacobian H at current x from h(x)
@@ -112,7 +108,7 @@ class Sensor:
     def generate_measurement(self, num_frame, z, meas_list):
         # generate new measurement from this sensor and add to measurement list
         ############
-        # TODO Step 4: remove restriction to lidar in order to include camera as well
+        # Step 4: remove restriction to lidar in order to include camera as well
         ############
         
         if self.name == 'lidar':
