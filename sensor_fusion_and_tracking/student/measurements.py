@@ -66,18 +66,12 @@ class Sensor:
         elif self.name == 'camera':
             
             ############
-            # TODO Step 4: implement nonlinear camera measurement function h:
+            # Step 4: implement nonlinear camera measurement function h:
             # - transform position estimate from vehicle to camera coordinates
             # - project from camera to image coordinates
             # - make sure to not divide by zero, raise an error if needed
             # - return h(x)
             ############
-
-            pass
-        
-            ############
-            # END student code
-            ############ 
         
     def get_H(self, x):
         # calculate Jacobian H at current x from h(x)
@@ -114,7 +108,7 @@ class Sensor:
     def generate_measurement(self, num_frame, z, meas_list):
         # generate new measurement from this sensor and add to measurement list
         ############
-        # TODO Step 4: remove restriction to lidar in order to include camera as well
+        # Step 4: remove restriction to lidar in order to include camera as well
         ############
         
         if self.name == 'lidar':
