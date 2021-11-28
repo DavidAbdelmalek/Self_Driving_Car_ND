@@ -44,11 +44,13 @@ class Sensor:
     def in_fov(self, x):
         # check if an object x can be seen by this sensor
         ############
-        # TODO Step 4: implement a function that returns True if x lies in the sensor's field of view, 
+        # Step 4: implement a function that returns True if x lies in the sensor's field of view, 
         # otherwise False.
         ############
-
-        return True
+        pos_sens = self.veh_to_sens[:3,:3] * x[:3]
+        alpha =  np.arctan(pos_sens[1]/pos_sens[0])[0]
+    
+        return alpha > self.fov[0] and alpha < self.fov[1]
         
         ############
         # END student code

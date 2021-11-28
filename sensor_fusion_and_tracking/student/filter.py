@@ -86,7 +86,7 @@ class Filter:
         gamma = self.gamma(track,meas)
         
         # Calculate kalman gain
-        K =  P * H.T *np.linalg.inv(S)
+        K =  P * H.T * np.linalg.inv(S)
         x = track.x + K*gamma # state update
         I = np.identity(params.dim_state)
         P = (I - K*H) * P # covariance update
