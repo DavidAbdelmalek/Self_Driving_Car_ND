@@ -41,3 +41,21 @@ The fusion of Lidar and Color camera sensors for predicting object motions is im
 ![https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/3d_object_tracking.gif](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/3d_object_tracking.gif)
 
 ![https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/tracking_RMSE.png](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/tracking_RMSE.png)
+---
+### Project challenges
+
+Implementing . However, track measurement and association was not trivial to complete. Besides, constructing non-linear `hx` and Jacobian `H`  was very challenging as It needs strong mathematics background and understanding of Gaussian distributions.
+
+----
+### Cons in using camera-lidar fusion compared to lidar-only tracking
+
+By adding the second sensor color camera, the object detection can be strengthen thanks to the RGB information, which compensates the shortage part from lidar sensor and enrich the system with image with high resolution that at the end can help improve trackings.
+
+--- 
+### Sensor Fusion Challenges in real-life scenarios
+
+Since each sensor type may have a different field of view, one concern is that how to deal with invisible/occlusion areas that some of sensors cannot capture while maintaining high accuracy for object detection. While fully covering the area of an ego car's surroundings may improve the detection, the calibration of heterogeneous sensors is still challenging.
+
+---
+### Possible improvements
+Add more sensors to cover a wider area, for instance, radars to detect the object's position/velocity, stereo cameras for 2D/3D information.
