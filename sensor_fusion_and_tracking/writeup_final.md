@@ -31,7 +31,13 @@ Steps to update associate matrix at each timestamp:
 - Compute `MHD()` to track the distance between track and measurement.
 - Use `gating()`  function to check if a measurement lies inside a track's gate.
 - Update the list of unassigned measurements  `unassigned_meas`  and unassigned tracks  `unassigned_tracks`  to include the indices of all measurements and tracks that did not get associated. The following visualizations showed a multiple object tracking scenario with approximately 200 frames.
-![https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/association_update.gif](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/association_update.gif)
+
 ![https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/association_RMSE.png](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/association_RMSE.png)
 ----
 ### 4. Camera-lidar fusion ([measurements.py](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/blob/main/sensor_fusion_and_tracking/student/measurements.py))
+
+The fusion of Lidar and Color camera sensors for predicting object motions is implemented. The measurement values for Lidar sensor is 3D positions `x, y, z`. The measurement noise covariance matrix `R` is 3x3. On the other hand, for the color camera sensor, only 2D positions `u, v` in image space can be measured. Hence, its covariance matrix `R` is 2x2. Unlike the Lidar sensor, the color camera sensor relies on a nonlinear measurement model h(x) to convert vehicle's state `x` to 2D measurement space. To get the residual covariance `S` and kalman gain `K`, the nonlinear function h(x) is linearized as Jacobian H. The tracking updates all tracks when Lidar or Color camera measurements arrives to the system. The visualization of multiple object tracking results along with the RMSE can be seen below:
+
+![https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/3d_object_tracking.gif](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/tracking_RMSE.png)
+
+![https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/3d_object_tracking.gif](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/tracking_RMSE.png)

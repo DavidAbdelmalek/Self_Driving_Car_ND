@@ -38,21 +38,13 @@ class Association:
         # - update list of unassigned measurements and unassigned tracks
         ############
         
-        # the following only works for at most one track and one measurement
-        self.association_matrix = np.matrix([]) # reset matrix
-        self.unassigned_tracks = [] # reset lists
-        self.unassigned_meas = []
-        
         N = len(track_list)
         M = len(meas_list)
-            
-        if len(meas_list) > 0:
-            self.unassigned_meas = list(range(M))
-        if len(track_list) > 0:
-            self.unassigned_tracks = list(range(N))
-        if len(meas_list) > 0 and len(track_list) > 0: 
-            # Intilize association_matrix
-            self.association_matrix = np.inf*np.ones((N,M)) 
+        
+        self.unassigned_meas = list(range(M))
+        self.unassigned_tracks = list(range(N))
+        # Intilize association_matrix
+        self.association_matrix = np.inf*np.ones((N,M)) 
         
         # Fill association_matrix with MHD.
         for i in range(N):
@@ -76,22 +68,23 @@ class Association:
         # - return this track and measurement
         ############
         A = self.association_matrix
-        if A.shape[0] > 0:
-            # find minimum entry in association matrix
-            ind_track, ind_meas = np.unravel_index(np.argmin(A, axis=None), A.shape)
-            # delete correspondin row and column
-            A = np.delete(A, ind_track, 0)
-            A = np.delete(A, ind_meas, 1)
+        if np.min(A) == np.inf:
+            return np.nan, np.nan
+        # find minimum entry in association matrix
+        ind_track, ind_meas = np.unravel_index(np.argmin(A, axis=None), A.shape)
+        # delete correspondin row and column
+        A = np.delete(A, ind_track, 0)
+        A = np.delete(A, ind_meas, 1)
             
-            # Extract track and associated measurement.
-            update_track = self.unassigned_tracks[ind_track] 
-            update_meas = self.unassigned_meas[ind_meas]
+        # Extract track and associated measurement.
+        update_track = self.unassigned_tracks[ind_track] 
+        update_meas = self.unassigned_meas[ind_meas]
             
-            # Update Association matrix 
-            self.association_matrix = A
-            # remove corresponding track and measurement from unassigned_tracks and unassigned_meas
-            self.unassigned_tracks.remove(update_track) 
-            self.unassigned_meas.remove(update_meas)
+        # Update Association matrix 
+        self.association_matrix = A
+        # remove corresponding track and measurement from unassigned_tracks and unassigned_meas
+        self.unassigned_tracks.remove(update_track) 
+        self.unassigned_meas.remove(update_meas)
              
         return update_track, update_meas     
 

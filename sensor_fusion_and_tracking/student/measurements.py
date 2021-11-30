@@ -75,18 +75,19 @@ class Sensor:
             
             # calculate nonlinear measurement expectation value h(x)   
             hx = np.zeros((2,1))
+            # Transform position estimate from vehicle to camera coordinates
+            pos_veh  = np.ones((int(params.dim_state/2)+1,1))
+            pos_veh[0:3,:] = x[0:3,:] 
+            pos_sens = self.veh_to_sens*pos_veh # transform from vehicle to camera coordinates
+                
             # check and print error message if dividing by zero
-            if x[0]==0:
+            if pos_sens[0,0]==0:
                 raise NameError('Jacobian not defined for x[0]=0!')
             else:
-                # Transform position estimate from vehicle to camera coordinates
-                pos_veh  = np.ones((int(params.dim_state/2)+1,1))
-                pos_veh[0:3,:] = x[0:3,:] 
-                pos_sens = self.veh_to_sens*pos_veh # transform from vehicle to camera coordinates
                 # Project from camera to image coordinates
-                hx[0,0] = self.c_i - self.f_i*pos_sens[1]/pos_sens[0] # project to image coordinates
-                hx[1,0] = self.c_j - self.f_j*pos_sens[2]/pos_sens[0]
-                return hx    
+                hx[0,0] = self.c_i - self.f_i*pos_sens[1,0]/pos_sens[0, 0] # project to image coordinates
+                hx[1,0] = self.c_j - self.f_j*pos_sens[2,0]/pos_sens[0, 0]
+            return hx    
             
         
     def get_H(self, x):

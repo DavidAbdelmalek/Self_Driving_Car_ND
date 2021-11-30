@@ -38,6 +38,8 @@ class Track:
         # Initialization of x and P based on 
         # unassigned measurement transformed from sensor to vehicle coordinate
         z = np.vstack((meas.z,np.ones(1)))
+        z[:3,:]= meas.sensor.sens_to_veh[:3,:3]* z[:3,:]
+        
         M = np.zeros((4,4))
         M[:3,:3] = M_rot
         M[:,3] = np.vstack((np.ones((3,1)) * params.dt,np.ones(1))).ravel()
@@ -155,7 +157,7 @@ class Trackmanagement:
         
     def handle_updated_track(self, track):      
         ############
-        # TODO Step 2: implement track management for updated tracks:
+        # Step 2: implement track management for updated tracks:
         # - increase track score
         # - set track state to 'tentative' or 'confirmed'
         ############
