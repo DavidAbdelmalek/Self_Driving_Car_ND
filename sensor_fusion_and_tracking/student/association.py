@@ -93,7 +93,7 @@ class Association:
         # Step 3: return True if measurement lies inside gate, otherwise False
         ############
         # df = degree of freedom
-        dist = chi2.ppf(0.95, 2)
+        dist = chi2.ppf(0.95, sensor.dim_meas)
         return True if MHD < dist else False
         
         
