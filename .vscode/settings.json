@@ -3,6 +3,9 @@
         "ostream": "cpp",
         "cmath": "cpp",
         "factorial.h": "c",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "dense": "cpp",
+        "iosfwd": "cpp",
+        "vector": "cpp"
     }
 }
