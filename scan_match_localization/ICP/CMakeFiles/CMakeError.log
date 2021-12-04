@@ -1,0 +1,269 @@
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /Users/dodo/anaconda3/bin/x86_64-apple-darwin13.4.0-clang 
+Build flags: -march=core2;-mtune=haswell;-mssse3;-ftree-vectorize;-fPIC;-fPIE;-fstack-protector-strong;-O2;-pipe;-isystem;/Users/dodo/anaconda3/include
+Id flags:  
+
+The output was:
+1
+ld: unsupported tapi file type '!tapi-tbd' in YAML file '/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libSystem.tbd' for architecture x86_64
+clang-12: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /Users/dodo/anaconda3/bin/x86_64-apple-darwin13.4.0-clang++ 
+Build flags: -march=core2;-mtune=haswell;-mssse3;-ftree-vectorize;-fPIC;-fPIE;-fstack-protector-strong;-O2;-pipe;-stdlib=libc++;-fvisibility-inlines-hidden;-std=c++14;-fmessage-length=0;-isystem;/Users/dodo/anaconda3/include
+Id flags:  
+
+The output was:
+1
+ld: unsupported tapi file type '!tapi-tbd' in YAML file '/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libc++.tbd' for architecture x86_64
+clang-12: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Detecting C compiler ABI info failed to compile with the following output:
+Change Dir: /Users/dodo/downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/Users/dodo/anaconda3/bin/make -f Makefile cmTC_53484/fast && /Users/dodo/anaconda3/bin/make  -f CMakeFiles/cmTC_53484.dir/build.make CMakeFiles/cmTC_53484.dir/build
+make[1]: Entering directory '/Users/dodo/Downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_53484.dir/CMakeCCompilerABI.c.o
+/Users/dodo/anaconda3/bin/x86_64-apple-darwin13.4.0-clang   -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/dodo/anaconda3/include  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk   -v -Wl,-v -MD -MT CMakeFiles/cmTC_53484.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_53484.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_53484.dir/CMakeCCompilerABI.c.o -c /usr/local/Cellar/cmake/3.20.4/share/cmake/Modules/CMakeCCompilerABI.c
+clang version 12.0.0
+Target: x86_64-apple-darwin13.4.0
+Thread model: posix
+InstalledDir: /Users/dodo/anaconda3/bin
+clang-12: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+ (in-process)
+ "/Users/dodo/anaconda3/bin/clang-12" -cc1 -triple x86_64-apple-macosx12.0.0 -Wundef-prefix=TARGET_OS_OSX -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-rounding-math -munwind-tables -target-sdk-version=12.0 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -target-cpu core2 -target-feature +ssse3 -tune-cpu haswell -debugger-tuning=lldb -target-linker-version 274.2 -v -resource-dir /Users/dodo/anaconda3/lib/clang/12.0.0 -dependency-file CMakeFiles/cmTC_53484.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_53484.dir/CMakeCCompilerABI.c.o -sys-header-deps -isystem /Users/dodo/anaconda3/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Users/dodo/anaconda3/lib/clang/12.0.0/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -O2 -fdebug-compilation-dir /Users/dodo/Downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp -ferror-limit 19 -stack-protector 2 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fmax-type-align=16 -vectorize-loops -vectorize-slp -o CMakeFiles/cmTC_53484.dir/CMakeCCompilerABI.c.o -x c /usr/local/Cellar/cmake/3.20.4/share/cmake/Modules/CMakeCCompilerABI.c
+clang -cc1 version 12.0.0 based upon LLVM 12.0.0 default target x86_64-apple-darwin21.1.0
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+#include "..." search starts here:
+#include <...> search starts here:
+ /Users/dodo/anaconda3/include
+ /Users/dodo/anaconda3/lib/clang/12.0.0/include
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
+End of search list.
+Linking C executable cmTC_53484
+/usr/local/Cellar/cmake/3.20.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_53484.dir/link.txt --verbose=1
+/Users/dodo/anaconda3/bin/x86_64-apple-darwin13.4.0-clang -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/dodo/anaconda3/include  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/Users/dodo/anaconda3/lib -L/Users/dodo/anaconda3/lib -v -Wl,-v CMakeFiles/cmTC_53484.dir/CMakeCCompilerABI.c.o -o cmTC_53484 
+clang version 12.0.0
+Target: x86_64-apple-darwin13.4.0
+Thread model: posix
+InstalledDir: /Users/dodo/anaconda3/bin
+ "/Users/dodo/anaconda3/bin/x86_64-apple-darwin13.4.0-ld" -demangle -lto_library /Users/dodo/anaconda3/lib/libLTO.12.dylib -dynamic -arch x86_64 -macosx_version_min 12.0.0 -pie -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -o cmTC_53484 -L/Users/dodo/anaconda3/lib -search_paths_first -headerpad_max_install_names -pie -headerpad_max_install_names -dead_strip_dylibs -rpath /Users/dodo/anaconda3/lib -v CMakeFiles/cmTC_53484.dir/CMakeCCompilerABI.c.o -lSystem /Users/dodo/anaconda3/lib/clang/12.0.0/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-530
+BUILD 05:01:35 Aug  4 2021
+configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+Library search paths:
+	/Users/dodo/anaconda3/lib
+	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
+Framework search paths:
+	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/
+ld: unsupported tapi file type '!tapi-tbd' in YAML file '/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libSystem.tbd' for architecture x86_64
+clang-12: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [CMakeFiles/cmTC_53484.dir/build.make:100: cmTC_53484] Error 1
+make[1]: Leaving directory '/Users/dodo/Downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_53484/fast] Error 2
+
+
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: /Users/dodo/downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/Users/dodo/anaconda3/bin/make -f Makefile cmTC_819e3/fast && /Users/dodo/anaconda3/bin/make  -f CMakeFiles/cmTC_819e3.dir/build.make CMakeFiles/cmTC_819e3.dir/build
+make[1]: Entering directory '/Users/dodo/Downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_819e3.dir/testCCompiler.c.o
+/Users/dodo/anaconda3/bin/x86_64-apple-darwin13.4.0-clang   -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/dodo/anaconda3/include  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -MD -MT CMakeFiles/cmTC_819e3.dir/testCCompiler.c.o -MF CMakeFiles/cmTC_819e3.dir/testCCompiler.c.o.d -o CMakeFiles/cmTC_819e3.dir/testCCompiler.c.o -c /Users/dodo/downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_819e3
+/usr/local/Cellar/cmake/3.20.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_819e3.dir/link.txt --verbose=1
+/Users/dodo/anaconda3/bin/x86_64-apple-darwin13.4.0-clang -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/dodo/anaconda3/include  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/Users/dodo/anaconda3/lib -L/Users/dodo/anaconda3/lib  CMakeFiles/cmTC_819e3.dir/testCCompiler.c.o -o cmTC_819e3 
+ld: unsupported tapi file type '!tapi-tbd' in YAML file '/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libSystem.tbd' for architecture x86_64
+clang-12: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [CMakeFiles/cmTC_819e3.dir/build.make:100: cmTC_819e3] Error 1
+make[1]: Leaving directory '/Users/dodo/Downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_819e3/fast] Error 2
+
+
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /Users/dodo/anaconda3/bin/x86_64-apple-darwin13.4.0-clang 
+Build flags: -march=core2;-mtune=haswell;-mssse3;-ftree-vectorize;-fPIC;-fPIE;-fstack-protector-strong;-O2;-pipe;-isystem;/Users/dodo/anaconda3/include
+Id flags:  
+
+The output was:
+1
+ld: library not found for -lSystem
+clang-12: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /Users/dodo/anaconda3/bin/x86_64-apple-darwin13.4.0-clang++ 
+Build flags: -march=core2;-mtune=haswell;-mssse3;-ftree-vectorize;-fPIC;-fPIE;-fstack-protector-strong;-O2;-pipe;-stdlib=libc++;-fvisibility-inlines-hidden;-std=c++14;-fmessage-length=0;-isystem;/Users/dodo/anaconda3/include
+Id flags:  
+
+The output was:
+1
+ld: library not found for -lc++
+clang-12: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Detecting C compiler ABI info failed to compile with the following output:
+Change Dir: /Users/dodo/downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/Users/dodo/anaconda3/bin/make -f Makefile cmTC_51e13/fast && /Users/dodo/anaconda3/bin/make  -f CMakeFiles/cmTC_51e13.dir/build.make CMakeFiles/cmTC_51e13.dir/build
+make[1]: Entering directory '/Users/dodo/Downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_51e13.dir/CMakeCCompilerABI.c.o
+/Users/dodo/anaconda3/bin/x86_64-apple-darwin13.4.0-clang   -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/dodo/anaconda3/include    -v -Wl,-v -MD -MT CMakeFiles/cmTC_51e13.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_51e13.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_51e13.dir/CMakeCCompilerABI.c.o -c /usr/local/Cellar/cmake/3.20.4/share/cmake/Modules/CMakeCCompilerABI.c
+clang version 12.0.0
+Target: x86_64-apple-darwin13.4.0
+Thread model: posix
+InstalledDir: /Users/dodo/anaconda3/bin
+clang-12: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+ (in-process)
+ "/Users/dodo/anaconda3/bin/clang-12" -cc1 -triple x86_64-apple-macosx10.9.0 -Wundef-prefix=TARGET_OS_OSX -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-rounding-math -munwind-tables -faligned-alloc-unavailable -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -target-cpu core2 -target-feature +ssse3 -tune-cpu haswell -debugger-tuning=lldb -target-linker-version 274.2 -v -resource-dir /Users/dodo/anaconda3/lib/clang/12.0.0 -dependency-file CMakeFiles/cmTC_51e13.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_51e13.dir/CMakeCCompilerABI.c.o -sys-header-deps -isystem /Users/dodo/anaconda3/include -internal-isystem /usr/local/include -internal-isystem /Users/dodo/anaconda3/lib/clang/12.0.0/include -internal-externc-isystem /usr/include -O2 -fdebug-compilation-dir /Users/dodo/Downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp -ferror-limit 19 -stack-protector 2 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fmax-type-align=16 -vectorize-loops -vectorize-slp -o CMakeFiles/cmTC_51e13.dir/CMakeCCompilerABI.c.o -x c /usr/local/Cellar/cmake/3.20.4/share/cmake/Modules/CMakeCCompilerABI.c
+clang -cc1 version 12.0.0 based upon LLVM 12.0.0 default target x86_64-apple-darwin21.1.0
+ignoring nonexistent directory "/usr/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /Users/dodo/anaconda3/include
+ /usr/local/include
+ /Users/dodo/anaconda3/lib/clang/12.0.0/include
+ /System/Library/Frameworks (framework directory)
+ /Library/Frameworks (framework directory)
+End of search list.
+Linking C executable cmTC_51e13
+/usr/local/Cellar/cmake/3.20.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_51e13.dir/link.txt --verbose=1
+/Users/dodo/anaconda3/bin/x86_64-apple-darwin13.4.0-clang -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/dodo/anaconda3/include  -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/Users/dodo/anaconda3/lib -L/Users/dodo/anaconda3/lib -v -Wl,-v CMakeFiles/cmTC_51e13.dir/CMakeCCompilerABI.c.o -o cmTC_51e13 
+clang version 12.0.0
+Target: x86_64-apple-darwin13.4.0
+Thread model: posix
+InstalledDir: /Users/dodo/anaconda3/bin
+ "/Users/dodo/anaconda3/bin/x86_64-apple-darwin13.4.0-ld" -demangle -lto_library /Users/dodo/anaconda3/lib/libLTO.12.dylib -dynamic -arch x86_64 -macosx_version_min 10.9.0 -pie -o cmTC_51e13 -L/Users/dodo/anaconda3/lib -search_paths_first -headerpad_max_install_names -pie -headerpad_max_install_names -dead_strip_dylibs -rpath /Users/dodo/anaconda3/lib -v CMakeFiles/cmTC_51e13.dir/CMakeCCompilerABI.c.o -lSystem /Users/dodo/anaconda3/lib/clang/12.0.0/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-530
+BUILD 05:01:35 Aug  4 2021
+configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+Library search paths:
+	/Users/dodo/anaconda3/lib
+	/usr/local/lib
+	/usr/lib
+Framework search paths:
+	/Library/Frameworks/
+	/System/Library/Frameworks/
+ld: library not found for -lSystem
+clang-12: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [CMakeFiles/cmTC_51e13.dir/build.make:100: cmTC_51e13] Error 1
+make[1]: Leaving directory '/Users/dodo/Downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_51e13/fast] Error 2
+
+
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: /Users/dodo/downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/Users/dodo/anaconda3/bin/make -f Makefile cmTC_30a70/fast && /Users/dodo/anaconda3/bin/make  -f CMakeFiles/cmTC_30a70.dir/build.make CMakeFiles/cmTC_30a70.dir/build
+make[1]: Entering directory '/Users/dodo/Downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_30a70.dir/testCCompiler.c.o
+/Users/dodo/anaconda3/bin/x86_64-apple-darwin13.4.0-clang   -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/dodo/anaconda3/include  -MD -MT CMakeFiles/cmTC_30a70.dir/testCCompiler.c.o -MF CMakeFiles/cmTC_30a70.dir/testCCompiler.c.o.d -o CMakeFiles/cmTC_30a70.dir/testCCompiler.c.o -c /Users/dodo/downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_30a70
+/usr/local/Cellar/cmake/3.20.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_30a70.dir/link.txt --verbose=1
+/Users/dodo/anaconda3/bin/x86_64-apple-darwin13.4.0-clang -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/dodo/anaconda3/include  -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/Users/dodo/anaconda3/lib -L/Users/dodo/anaconda3/lib  CMakeFiles/cmTC_30a70.dir/testCCompiler.c.o -o cmTC_30a70 
+ld: library not found for -lSystem
+clang-12: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [CMakeFiles/cmTC_30a70.dir/build.make:100: cmTC_30a70] Error 1
+make[1]: Leaving directory '/Users/dodo/Downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_30a70/fast] Error 2
+
+
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /Users/dodo/anaconda3/bin/x86_64-apple-darwin13.4.0-clang 
+Build flags: -march=core2;-mtune=haswell;-mssse3;-ftree-vectorize;-fPIC;-fPIE;-fstack-protector-strong;-O2;-pipe;-isystem;/Users/dodo/anaconda3/include
+Id flags:  
+
+The output was:
+1
+ld: unsupported tapi file type '!tapi-tbd' in YAML file '/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libSystem.tbd' for architecture x86_64
+clang-12: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /Users/dodo/anaconda3/bin/x86_64-apple-darwin13.4.0-clang++ 
+Build flags: -march=core2;-mtune=haswell;-mssse3;-ftree-vectorize;-fPIC;-fPIE;-fstack-protector-strong;-O2;-pipe;-stdlib=libc++;-fvisibility-inlines-hidden;-std=c++14;-fmessage-length=0;-isystem;/Users/dodo/anaconda3/include
+Id flags:  
+
+The output was:
+1
+ld: unsupported tapi file type '!tapi-tbd' in YAML file '/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libSystem.tbd' for architecture x86_64
+clang-12: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Detecting C compiler ABI info failed to compile with the following output:
+Change Dir: /Users/dodo/Downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/Users/dodo/anaconda3/bin/make -f Makefile cmTC_50cab/fast && /Users/dodo/anaconda3/bin/make  -f CMakeFiles/cmTC_50cab.dir/build.make CMakeFiles/cmTC_50cab.dir/build
+make[1]: Entering directory '/Users/dodo/Downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_50cab.dir/CMakeCCompilerABI.c.o
+/Users/dodo/anaconda3/bin/x86_64-apple-darwin13.4.0-clang   -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/dodo/anaconda3/include  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk   -v -Wl,-v -MD -MT CMakeFiles/cmTC_50cab.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_50cab.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_50cab.dir/CMakeCCompilerABI.c.o -c /usr/local/Cellar/cmake/3.20.4/share/cmake/Modules/CMakeCCompilerABI.c
+clang version 12.0.0
+Target: x86_64-apple-darwin13.4.0
+Thread model: posix
+InstalledDir: /Users/dodo/anaconda3/bin
+clang-12: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
+ (in-process)
+ "/Users/dodo/anaconda3/bin/clang-12" -cc1 -triple x86_64-apple-macosx12.0.0 -Wundef-prefix=TARGET_OS_OSX -Werror=undef-prefix -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -emit-obj --mrelax-relocations -disable-free -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=all -fno-rounding-math -munwind-tables -target-sdk-version=12.0 -fcompatibility-qualified-id-block-type-checking -fvisibility-inlines-hidden-static-local-var -target-cpu core2 -target-feature +ssse3 -tune-cpu haswell -debugger-tuning=lldb -target-linker-version 274.2 -v -resource-dir /Users/dodo/anaconda3/lib/clang/12.0.0 -dependency-file CMakeFiles/cmTC_50cab.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_50cab.dir/CMakeCCompilerABI.c.o -sys-header-deps -isystem /Users/dodo/anaconda3/include -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Users/dodo/anaconda3/lib/clang/12.0.0/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -O2 -fdebug-compilation-dir /Users/dodo/Downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp -ferror-limit 19 -stack-protector 2 -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fmax-type-align=16 -vectorize-loops -vectorize-slp -o CMakeFiles/cmTC_50cab.dir/CMakeCCompilerABI.c.o -x c /usr/local/Cellar/cmake/3.20.4/share/cmake/Modules/CMakeCCompilerABI.c
+clang -cc1 version 12.0.0 based upon LLVM 12.0.0 default target x86_64-apple-darwin21.1.0
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"
+ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
+#include "..." search starts here:
+#include <...> search starts here:
+ /Users/dodo/anaconda3/include
+ /Users/dodo/anaconda3/lib/clang/12.0.0/include
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
+End of search list.
+Linking C executable cmTC_50cab
+/usr/local/Cellar/cmake/3.20.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_50cab.dir/link.txt --verbose=1
+/Users/dodo/anaconda3/bin/x86_64-apple-darwin13.4.0-clang -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/dodo/anaconda3/include  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/Users/dodo/anaconda3/lib -L/Users/dodo/anaconda3/lib -v -Wl,-v CMakeFiles/cmTC_50cab.dir/CMakeCCompilerABI.c.o -o cmTC_50cab 
+clang version 12.0.0
+Target: x86_64-apple-darwin13.4.0
+Thread model: posix
+InstalledDir: /Users/dodo/anaconda3/bin
+ "/Users/dodo/anaconda3/bin/x86_64-apple-darwin13.4.0-ld" -demangle -lto_library /Users/dodo/anaconda3/lib/libLTO.12.dylib -dynamic -arch x86_64 -macosx_version_min 12.0.0 -pie -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -o cmTC_50cab -L/Users/dodo/anaconda3/lib -search_paths_first -headerpad_max_install_names -pie -headerpad_max_install_names -dead_strip_dylibs -rpath /Users/dodo/anaconda3/lib -v CMakeFiles/cmTC_50cab.dir/CMakeCCompilerABI.c.o -lSystem /Users/dodo/anaconda3/lib/clang/12.0.0/lib/darwin/libclang_rt.osx.a
+@(#)PROGRAM:ld  PROJECT:ld64-530
+BUILD 05:01:35 Aug  4 2021
+configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em (tvOS)
+Library search paths:
+	/Users/dodo/anaconda3/lib
+	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
+Framework search paths:
+	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/
+ld: unsupported tapi file type '!tapi-tbd' in YAML file '/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libSystem.tbd' for architecture x86_64
+clang-12: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [CMakeFiles/cmTC_50cab.dir/build.make:100: cmTC_50cab] Error 1
+make[1]: Leaving directory '/Users/dodo/Downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_50cab/fast] Error 2
+
+
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: /Users/dodo/Downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/Users/dodo/anaconda3/bin/make -f Makefile cmTC_6df62/fast && /Users/dodo/anaconda3/bin/make  -f CMakeFiles/cmTC_6df62.dir/build.make CMakeFiles/cmTC_6df62.dir/build
+make[1]: Entering directory '/Users/dodo/Downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6df62.dir/testCCompiler.c.o
+/Users/dodo/anaconda3/bin/x86_64-apple-darwin13.4.0-clang   -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/dodo/anaconda3/include  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -MD -MT CMakeFiles/cmTC_6df62.dir/testCCompiler.c.o -MF CMakeFiles/cmTC_6df62.dir/testCCompiler.c.o.d -o CMakeFiles/cmTC_6df62.dir/testCCompiler.c.o -c /Users/dodo/Downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_6df62
+/usr/local/Cellar/cmake/3.20.4/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6df62.dir/link.txt --verbose=1
+/Users/dodo/anaconda3/bin/x86_64-apple-darwin13.4.0-clang -march=core2 -mtune=haswell -mssse3 -ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe -isystem /Users/dodo/anaconda3/include  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names -Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs -Wl,-rpath,/Users/dodo/anaconda3/lib -L/Users/dodo/anaconda3/lib  CMakeFiles/cmTC_6df62.dir/testCCompiler.c.o -o cmTC_6df62 
+ld: unsupported tapi file type '!tapi-tbd' in YAML file '/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/libSystem.tbd' for architecture x86_64
+clang-12: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [CMakeFiles/cmTC_6df62.dir/build.make:100: cmTC_6df62] Error 1
+make[1]: Leaving directory '/Users/dodo/Downloads/Self_Driving_Car_ND/workspace/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_6df62/fast] Error 2
+
+
+
