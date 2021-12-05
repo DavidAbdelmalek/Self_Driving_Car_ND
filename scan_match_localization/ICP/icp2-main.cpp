@@ -99,7 +99,7 @@ vector<int> NN(PointCloudT::Ptr target, PointCloudT::Ptr source, Eigen::Matrix4d
     pcl::transformPointCloud (*source, *transformSource, initTransform);
 
 	// TODO: create a KDtree with target as input
-	pcl::KdTreeFLANN<pcl::PointT> kdtree;
+	pcl::KdTreeFLANN<PointT> kdtree;
 	kdtree.setInputCloud (target);
 
 	// TODO loop through each transformed source point and using the KDtree find the transformed source point's nearest target point. Append the nearest point to associaitons 
@@ -132,7 +132,7 @@ vector<Pair> PairPoints(vector<int> associations, PointCloudT::Ptr target, Point
 			PointT sourcePoint = (*source)[i];
 			
 			// add it to pairs
-			pairs.push_back(Pair(Point(sourcePoint.x, sourcePoint.y,0), Point(association.x, association.y,0)) ));
+			pairs.push_back(Pair(Point(sourcePoint.x, sourcePoint.y,0), Point(targetPoint.x, targetPoint.y,0)));
 			}
 	}
 	return pairs;
@@ -140,12 +140,8 @@ vector<Pair> PairPoints(vector<int> associations, PointCloudT::Ptr target, Point
 
 Eigen::Matrix4d ICP(vector<int> associations, PointCloudT::Ptr target, PointCloudT::Ptr source, Pose startingPose, int iterations, pcl::visualization::PCLVisualizer::Ptr& viewer){
 
-
-  	// TODO: transform source by startingPose
-  	Eigen::Matrix4d transformation_matrix = Eigen::Matrix4d::Identity();
-
     // align source with starting pose
-      Eigen::Matrix4d initTransform = transform2D(startingPose.theta, startingPose.position.x, startingPose.position.y);
+      Eigen::Matrix4d initTransform = transform3D(startingPose.rotation.yaw, startingPose.rotation.pitch, startingPose.rotation.roll, startingPose.position.x, startingPose.position.y, startingPose.position.z);
       PointCloudT::Ptr transformSource (new PointCloudT); 
       pcl::transformPointCloud (*source, *transformSource, initTransform);
 	
@@ -161,13 +157,13 @@ Eigen::Matrix4d ICP(vector<int> associations, PointCloudT::Ptr target, PointClou
 
   	// TODO: create matrices P and Q which are both 2 x 1 and represent mean point of pairs 1 and pairs 2 respectivley.
   	// In other words P is the mean point of source and Q is the mean point target 
-	int index = 0;
+	
 	for(Pair pair: pairs){
 		P(0,0) += pair.p1.x;
 		P(1,0) += pair.p1.y;
 
 		Q(0,0) += pair.p2.x;
-		Q(1,0) += pair.p2.x ;
+		Q(1,0) += pair.p2.y ;
 	}
 	
 	P(0,0) = P(0,0)/pairs.size();
@@ -187,15 +183,13 @@ Eigen::Matrix4d ICP(vector<int> associations, PointCloudT::Ptr target, PointClou
 		
 		Y(0,index) = pair.p2.x  - Q(0,0);;
 		Y(1,index) = pair.p2.y - Q(1,0);;
-		
-		index++;
+		index++;	
 	}
   	// TODO: create matrix S using equation 3 from the svd_rot.pdf. Note W is simply the identity matrix because weights are all 1
 	Eigen::MatrixXd S = X *Y.transpose();
 	JacobiSVD<MatrixXd> svd(S, ComputeFullV | ComputeFullU);
 	
   	// TODO: create matrix R, the optimal rotation using equation 4 from the svd_rot.pdf and using SVD of S
-	//R=VUT.
 	// Creating Identity matrix of arbitrary size n x m
 
 	Eigen::MatrixXd D;
@@ -204,11 +198,11 @@ Eigen::Matrix4d ICP(vector<int> associations, PointCloudT::Ptr target, PointClou
 
 	
   	// TODO: create mtarix t, the optimal translatation using equation 5 from svd_rot.pdf
-	Eigen::MatrixXd R = svd.matrixV() * D svd.matrixU().transpose();
+	Eigen::MatrixXd R = svd.matrixV() * D * svd.matrixU().transpose();
 	Eigen::MatrixXd t = Q - R * P;
 
   	// TODO: set transformation_matrix based on above R, and t matrices
-  	 Eigen::Matrix4d transformation_matrix;
+	Eigen::Matrix4d transformation_matrix = Eigen::Matrix4d::Identity();
     transformation_matrix << Eigen::MatrixXd::Identity(4,4);
 
     transformation_matrix(0,0) = R(0,0);
@@ -221,10 +215,8 @@ Eigen::Matrix4d ICP(vector<int> associations, PointCloudT::Ptr target, PointClou
     //cout << "score is " << Score(pairs, transformation_matrix ) << endl;
 
     //cout << transformation_matrix << endl;
-
-    estimations = pairs;
     transformation_matrix =  transformation_matrix * initTransform;
-      return transformation_matrix;
+    return transformation_matrix;
 }
 
 int main(){
@@ -308,3 +300,4 @@ int main(){
   	
 	return 0;
 }
+
