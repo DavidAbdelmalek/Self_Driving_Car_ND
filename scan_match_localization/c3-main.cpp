@@ -41,6 +41,8 @@ std::chrono::time_point<std::chrono::system_clock> currentTime;
 vector<ControlState> cs;
 
 bool refresh_view = false;
+int count_UP      =  3 ;
+
 void keyboardEventOccurred(const pcl::visualization::KeyboardEvent &event, void* viewer)
 {
 
@@ -52,6 +54,8 @@ void keyboardEventOccurred(const pcl::visualization::KeyboardEvent &event, void*
 		cs.push_back(ControlState(0, 0.02, 0)); 
   	}
   	if (event.getKeySym() == "Up" && event.keyDown()){
+		  count_UP ++;
+		  cout << "Current count of up is " << count_UP<< endl;
 		cs.push_back(ControlState(0.1, 0, 0));
   	}
 	else if (event.getKeySym() == "Down" && event.keyDown()){
@@ -98,7 +102,36 @@ void drawCar(Pose pose, int num, Color color, double alpha, pcl::visualization::
     box.cube_height = 2;
 	renderBox(viewer, box, num, color, alpha);
 }
+Eigen::Matrix4d ICP(PointCloudT::Ptr target, PointCloudT::Ptr source, Pose startingPose, int iterations){
 
+  	 Eigen::Matrix4d transformation_matrix = Eigen::Matrix4d::Identity ();
+
+    // align source with starting pose
+      Eigen::Matrix4d initTransform = transform3D(startingPose.rotation.yaw,startingPose.rotation.pitch,startingPose.rotation.roll, 
+	  startingPose.position.x, startingPose.position.y,startingPose.position.z);
+      PointCloudT::Ptr transformSource (new PointCloudT); 
+      pcl::transformPointCloud (*source, *transformSource, initTransform);
+
+    pcl::console::TicToc time;
+      time.tic ();
+      pcl::IterativeClosestPoint<PointT, PointT> icp;
+      icp.setMaximumIterations (iterations);
+      icp.setInputSource (transformSource);
+      icp.setInputTarget (target);
+      PointCloudT::Ptr cloud_icp (new PointCloudT);  // ICP output point cloud
+      icp.align (*cloud_icp);
+
+      if (icp.hasConverged ())
+      {
+          transformation_matrix = icp.getFinalTransformation ().cast<double>();
+          transformation_matrix =  transformation_matrix * initTransform;
+          return transformation_matrix;
+      }
+      std::cout << "WARNING: ICP did not converge" << endl;
+
+    return transformation_matrix;
+
+}
 int main(){
 
 	auto client = cc::Client("localhost", 2000);
@@ -196,20 +229,35 @@ int main(){
 		}
 
   		viewer->spinOnce ();
+		PointCloudT::Ptr transformed_scan (new PointCloudT);
+		Eigen::Matrix4d transform;
 		
 		if(!new_scan){
 			
 			new_scan = true;
-			// TODO: (Filter scan using voxel filter)
+			// Filter scan using voxel filter
+			pcl::VoxelGrid<PointT> vg;
+  			vg.setInputCloud(scanCloud);
+			double filterRes = 0.5; 
+  			vg.setLeafSize(filterRes, filterRes, filterRes);
+  			vg.filter(*cloudFiltered);
 
-			// TODO: Find pose transform by using ICP or NDT matching
-			//pose = ....
+			// TODO: ICP scan matching algorithm . 
+			//Eigen::Matrix4d transform = transform3D(pose.rotation.yaw, pose.rotation.pitch, pose.rotation.roll, pose.position.x, pose.position.y, pose.position.z);
+				
+			//TODO: change the number of iterations to positive number
+         
+          	// cout << "Current iterations "<< iterations << endl;
+			transform = ICP(mapCloud, cloudFiltered, pose,30); //6 should 
+  			pose = getPose(transform);
+				
+			//double pose_error = sqrt( (truePose[0].position.x - pose.position.x) * (truePose[0].position.x - pose.position.x) + (truePose[0].position.y - pose.position.y) * (truePose[0].position.y - pose.position.y) );
+			//cout << "pose error: " << pose_error << endl;
+			
 
-			// TODO: Transform scan so it aligns with ego's actual pose and render that scan
-
+			pcl::transformPointCloud (*cloudFiltered, *transformed_scan, transform);
 			viewer->removePointCloud("scan");
-			// TODO: Change `scanCloud` below to your transformed scan
-			renderPointCloud(viewer, scanCloud, "scan", Color(1,0,0) );
+			renderPointCloud(viewer, transformed_scan, "scan", Color(1,0,0)	);
 
 			viewer->removeAllShapes();
 			drawCar(pose, 1,  Color(0,1,0), 0.35, viewer);
