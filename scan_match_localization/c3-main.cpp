@@ -115,6 +115,8 @@ Eigen::Matrix4d ICP(PointCloudT::Ptr target, PointCloudT::Ptr source, Pose start
     pcl::console::TicToc time;
       time.tic ();
       pcl::IterativeClosestPoint<PointT, PointT> icp;
+		// Set the transformation epsilon (criterion 2)
+	  icp.setTransformationEpsilon (1e-8);
       icp.setMaximumIterations (iterations);
       icp.setInputSource (transformSource);
       icp.setInputTarget (target);
@@ -248,12 +250,9 @@ int main(){
 			//TODO: change the number of iterations to positive number
          
           	// cout << "Current iterations "<< iterations << endl;
-			transform = ICP(mapCloud, cloudFiltered, pose,30); //6 should 
+			transform = ICP(mapCloud, cloudFiltered, pose,60); //6 should 
   			pose = getPose(transform);
-				
-			//double pose_error = sqrt( (truePose[0].position.x - pose.position.x) * (truePose[0].position.x - pose.position.x) + (truePose[0].position.y - pose.position.y) * (truePose[0].position.y - pose.position.y) );
-			//cout << "pose error: " << pose_error << endl;
-			
+							
 
 			pcl::transformPointCloud (*cloudFiltered, *transformed_scan, transform);
 			viewer->removePointCloud("scan");
