@@ -7,7 +7,7 @@ In this project,  the goal will be to localize a car driving in simulation for a
 
   
 
-# Usage
+## Usage
 
   
 
@@ -53,17 +53,17 @@ Please press:
 Lastly, the project will be running, click on the map and tap the UP key 3 times, with delays of 1 second between taps. If the green car gets left behind, run the project again and tap the UP key 3 times again. The second run or the third run usually produce better results than the results of the first run.
 
 
-# Video Demonstrations
+## Video Demonstrations
   
 
-** Scan Matching Localization with LIDAR Point Clouds - Algorithm 1: Normal Distributions Transform NDT **
+### Scan Matching Localization with LIDAR Point Clouds - Algorithm 1: Normal Distributions Transform NDT
 
 https://user-images.githubusercontent.com/22666537/145484017-1c1c7416-c2f2-407c-ae89-6a1db7d5791d.mov
 
 
   
 
-** Scan Matching Localization with LIDAR Point Clouds - Algorithm 2: Iterative Closest Point (ICP) **
+### Scan Matching Localization with LIDAR Point Clouds - Algorithm 2: Iterative Closest Point (ICP) **
 
 https://user-images.githubusercontent.com/22666537/145483935-9ef773b4-557c-405c-8866-0d2ad1aa2140.mov
 
