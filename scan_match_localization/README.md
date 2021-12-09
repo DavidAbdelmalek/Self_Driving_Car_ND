@@ -63,7 +63,7 @@ https://user-images.githubusercontent.com/22666537/145484017-1c1c7416-c2f2-407c-
 
   
 
-### Scan Matching Localization with LIDAR Point Clouds - Algorithm 2: Iterative Closest Point (ICP) **
+### Scan Matching Localization with LIDAR Point Clouds - Algorithm 2: Iterative Closest Point (ICP)
 
 https://user-images.githubusercontent.com/22666537/145483935-9ef773b4-557c-405c-8866-0d2ad1aa2140.mov
 
