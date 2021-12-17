@@ -84,37 +84,38 @@ std::vector<State> MotionPlanner::generate_offset_goals(
 
   // TODO-Perpendicular direction: ADD pi/2 to the goal yaw
   // (goal_state.rotation.yaw)
-  //auto yaw = ;  // <- Fix This
+  auto yaw = utils::keep_angle_range_rad(goal_state.rotation.yaw + M_PI_2, -M_PI, M_PI);  // <- Fix This
 
-  // LOG(INFO) << "MAIN GOAL";
-  // LOG(INFO) << "x: " << goal_state.location.x << " y: " <<
-  // goal_state.location.y
-  //          << " z: " << goal_state.location.z
-  //          << " yaw (rad): " << goal_state.rotation.yaw;
-  // LOG(INFO) << "OFFSET GOALS";
-  // LOG(INFO) << "ALL offset yaw (rad): " << yaw;
+  LOG(INFO) << "MAIN GOAL";
+  LOG(INFO) << "x: " << goal_state.location.x << " y: " <<
+  goal_state.location.y
+           << " z: " << goal_state.location.z
+            << " yaw (rad): " << goal_state.rotation.yaw;
+  LOG(INFO) << "OFFSET GOALS";
+  LOG(INFO) << "ALL offset yaw (rad): " << yaw;
 
   for (int i = 0; i < _num_paths; ++i) {
     auto goal_offset = goal_state;
     float offset = (i - (int)(_num_paths / 2)) * _goal_offset;
-    // LOG(INFO) << "Goal: " << i + 1;
-    // LOG(INFO) << "(int)(_num_paths / 2): " << (int)(_num_paths / 2);
-    // LOG(INFO) << "(i - (int)(_num_paths / 2)): " << (i - (int)(_num_paths /
-    // 2)); LOG(INFO) << "_goal_offset: " << _goal_offset;
+    LOG(INFO) << "Goal: " << i + 1;
+    LOG(INFO) << "(int)(_num_paths / 2): " << (int)(_num_paths / 2);
+    LOG(INFO) << "(i - (int)(_num_paths / 2)): " << (i - (int)(_num_paths /
+    2));
+    LOG(INFO) << "_goal_offset: " << _goal_offset;
 
-    // LOG(INFO) << "offset: " << offset;
+    LOG(INFO) << "offset: " << offset;
 
     // TODO-offset goal location: calculate the x and y position of the offset
     // goals using "offset" (calculated above) and knowing that the goals should
     // lie on a perpendicular line to the direction (yaw) of the main goal. You
     // calculated this direction above (yaw_plus_90). HINT: use
     // std::cos(yaw_plus_90) and std::sin(yaw_plus_90)
-    // goal_offset.location.x += ;  // <- Fix This
-    // goal_offset.location.y += ;  // <- Fix This
-    // LOG(INFO) << "x: " << goal_offset.location.x
-    //          << " y: " << goal_offset.location.y
-    //          << " z: " << goal_offset.location.z
-    //          << " yaw (rad): " << goal_offset.rotation.yaw;
+    goal_offset.location.x += offset * cos(yaw);  // <- Fix This
+    goal_offset.location.y += offset * sin(yaw);  // <- Fix This
+    LOG(INFO) << "x: " << goal_offset.location.x
+             << " y: " << goal_offset.location.y
+             << " z: " << goal_offset.location.z
+             << " yaw (rad): " << goal_offset.rotation.yaw;
 
     if (valid_goal(goal_state, goal_offset)) {
       goals_offset.push_back(goal_offset);
