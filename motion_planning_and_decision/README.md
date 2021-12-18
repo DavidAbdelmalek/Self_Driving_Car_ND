@@ -15,3 +15,10 @@ To accomplish this, you will implement:
 * Best trajectory selection though a cost function evaluation. This cost function will mainly perform a collision check and a proximity check to bring cost higher as we get closer or collide with objects but maintaining a bias to stay closer to the lane center line.
 
 
+
+
+# Video Demonstrations
+
+
+https://user-images.githubusercontent.com/22666537/146562398-8f294c7f-97eb-4fd0-92d4-a7f1163cb504.mov
+
