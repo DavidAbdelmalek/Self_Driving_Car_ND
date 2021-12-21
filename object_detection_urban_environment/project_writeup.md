@@ -106,3 +106,5 @@ After the trained model is exported, we perform object detection with the model 
 The object detection results are shown in the video below:
 
 [![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/animation.gif)](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/blob/main/object_detection_urban_environment/images/animation.gif)
+
+The loss is lower than the previous loss (un-augmented model). This is an indication of better performance. We have reduced overfitting to an extent with augmentation, however better classification results would be resulting from a more balanced dataset.
