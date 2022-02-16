@@ -98,7 +98,7 @@ We will monitor the training with TensorBoard and decide when to end it. Finally
 
   
 
-We perform the transfer learning using [SSD_ResNet50 model](http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.tar.gz) with the [default pipeline configuration](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/blob/main/object_detection_urban_environment/experiments/experiment_1/pipeline_new.config). The results of Loss and DetectionBox_Recall/Precision will be served as baselines. The curve in orange is Loss in training steps and blue dot is Loss in evaluation. Total loss for training and validation sets appear to converge. On closer inspection the values are approximately 0.26 and 0.54 for training and validation loss respectively. Therefore, the model is slightly overfitting the training data and the trained model needs to be more generous to predict objects in unseen data. To improve the initial results, we can add more variabilities in our data to simulate different environments during training. Hence, we will add more options of data augmentation in the pipeline configuration.
+We perform the transfer learning using [SSD_ResNet50 model](http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.tar.gz) with the [default pipeline configuration](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/blob/main/object_detection_urban_environment/experiments/experiment_1/pipeline_new.config). The results of Loss and DetectionBox_Recall/Precision will be served as baselines. The curve in orange is Loss in training steps and blue dot is Loss in evaluation. Total loss for training and validation sets appear to converge. On closer inspection the values are 1.24 and 1.70 for training and validation loss respectively. Therefore, the model is slightly overfitting the training data and the trained model needs to be more generous to predict objects in unseen data. To improve the initial results, we can add more variabilities in our data to simulate different environments during training. Hence, we will add more options of data augmentation in the pipeline configuration.
 
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/experiment_1/loss.png)
 
@@ -142,18 +142,12 @@ To improve on the model performance, we try several data augmentation steps such
 - Saturation values between 0.8 and 1.25
 
   
-
-| ||
-
-:-------------------------:|:-------------------------:
-
-![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_1.png) | ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_2.png)
-
-![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_3.png) | ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_4.png)
-
-![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_5.png) | ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_6.png)
-
-----
+|              ||
+ :-------------------------:|:-------------------------:
+ ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_1.png)  |  ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_2.png)
+ ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_3.png)  |  ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_4.png)
+ ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_5.png)  |  ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_6.png)
+ ----
 
 ### Experiment 2
 
