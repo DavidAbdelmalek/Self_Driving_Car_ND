@@ -142,18 +142,12 @@ To improve on the model performance, we try several data augmentation steps such
 - Saturation values between 0.8 and 1.25
 
   
-
-| ||
-
-:-------------------------:|:-------------------------:
-
-![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_1.png) | ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_2.png)
-
-![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_3.png) | ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_4.png)
-
-![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_5.png) | ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_6.png)
-
-----
+|              ||
+ :-------------------------:|:-------------------------:
+ ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_1.png)  |  ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_2.png)
+ ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_3.png)  |  ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_4.png)
+ ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_5.png)  |  ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/augmentated_imgs/augmented_img_6.png)
+ ----
 
 ### Experiment 2
 
