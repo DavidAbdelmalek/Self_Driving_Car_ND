@@ -14,7 +14,7 @@ LiDAR is one of the prominent sensors to provide the 3D information of the objec
 ### Project data structure
 LiDAR scans can be represented in range images. This data structure holds 3d points as a 360 degree of scanned environment. With each incremental rotation around the z-axis, the lidar sensor returns a number of range and intensity measurements, which are then stored in the corresponding cells of the range image.
 
-![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/lidar_data_structure.jpg)
+<img src="https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/lidar_data_structure.jpg" alt="bev intensity channel" width="600"/>
 
 ## Project steps: 
 ### Compute Lidar Point-Cloud from Range Image
@@ -41,8 +41,8 @@ The goal of this task is to convert range image into lidar point-cloud using sph
 ## Object Detection
 There is a pipeline for object detection which consists of three major parts, which are (1) data representation, (2) feature extraction and (3) model-based detection. The following figure shows the data flow through the pipeline with raw point cloud on one end and the classified objects on the other end:
 
+<img src="https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/object_detection_pipeline.jpg" alt="bev intensity channel" width="600"/>
 
-![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/#object_detection_pipeline.jpg)
 
 ### Create Birds-Eye View from Lidar PCL ([`bev_from_pcl`](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/blob/main/sensor_fusion_and_tracking/student/objdet_pcl.py#L115)  function)
 
@@ -114,5 +114,3 @@ FP  |  0
 
 
 [![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/preformance_evaluation.png)](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/preformance_evaluation.png)
-
-
