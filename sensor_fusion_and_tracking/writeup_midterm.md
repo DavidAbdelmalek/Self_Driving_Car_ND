@@ -11,13 +11,18 @@
 ## Project overview
 LiDAR is one of the prominent sensors to provide the 3D information of the object in terms of the point cloud to localize the objects and characterize the shapes.  For this project, a deep-learning approach is used to detect vehicles in LiDAR data ([Waymo Open dataset](https://waymo.com/open/)) based on a birds-eye view perspective of the 3D point-cloud. Detection performances such as Precision and Recall by comparing the ground truth labels with detection results are also evaluated. The steps of accomplishing 3D object detection are described below.
 
+### Project data structure
+LiDAR scans can be represented in range images. This data structure holds 3d points as a 360 degree of scanned environment. With each incremental rotation around the z-axis, the lidar sensor returns a number of range and intensity measurements, which are then stored in the corresponding cells of the range image.
+
+<img src="https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/lidar_data_structure.jpg" alt="bev intensity channel" width="600"/>
+
 ## Project steps: 
 ### Compute Lidar Point-Cloud from Range Image
 1. #### Visualize range image channels ([`show_range_image`](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/blob/main/sensor_fusion_and_tracking/student/objdet_pcl.py#L74) function)
-Range Image format holds 3d points as a 360 degree "photo" of the scanning environment with the row dimension denoting the elevation angle of the laser beam and the column dimension denoting the azimuth angle. These are the steps taken to extract range image:
+These are the steps taken to extract range image:
 -   Convert range image `range` channel to 8bit.
 -   Convert range image `intensity` channel to 8bit and normalize with the difference between the 1- and 99-percentile to mitigate the influence of outliers.
--   Carry out negative values for visulization. 
+-   Carry out negative values for visulization since they are used as flag for invalid points
 -   Crop range image to +/- 90 deg. left and right of the forward-facing x-axis to focus on the scene at the front-view.
 
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/range_img.png)
@@ -33,6 +38,12 @@ The goal of this task is to convert range image into lidar point-cloud using sph
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/71c679a2317558b6859b4cd3175f7c29c9cc44e8/sensor_fusion_and_tracking/img/lidar_9.png)  |  ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/71c679a2317558b6859b4cd3175f7c29c9cc44e8/sensor_fusion_and_tracking/img/lidar_10.png)
 
 ---- 
+## Object Detection
+There is a pipeline for object detection which consists of three major parts, which are (1) data representation, (2) feature extraction and (3) model-based detection. The following figure shows the data flow through the pipeline with raw point cloud on one end and the classified objects on the other end:
+
+<img src="https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/object_detection_pipeline.jpg" alt="bev intensity channel" width="600"/>
+
+
 ### Create Birds-Eye View from Lidar PCL ([`bev_from_pcl`](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/blob/main/sensor_fusion_and_tracking/student/objdet_pcl.py#L115)  function)
 
 A detailed description of all required steps can be found in the code.
@@ -103,5 +114,3 @@ FP  |  0
 
 
 [![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/preformance_evaluation.png)](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/preformance_evaluation.png)
-
-
