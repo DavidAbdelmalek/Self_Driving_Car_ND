@@ -126,10 +126,12 @@ def bev_from_pcl(lidar_pcl, configs):
     # convert sensor coordinates to bev-map coordinates (center is bottom-middle)
     
     ## step 1 :  compute bev-map discretization by dividing x-range by the bev-image height (see configs)
+    ## How many meters in world space is corresponding to how many pixels.
     bev_discret = (configs.lim_x[1] - configs.lim_x[0]) / configs.bev_height
     
     ## step 2 : create a copy of the lidar pcl and transform all metrix x-coordinates into bev-image coordinates    
     lidar_pcl_cpy = np.copy(lidar_pcl)
+    ## Convert from world coordinates to pixel coordinates to detect BEV coordinate for each lidar point meters/pixels.
     lidar_pcl_cpy[:, 0] = np.int_(np.floor(lidar_pcl_cpy[:, 0] / bev_discret))
 
     # step 3 : perform the same operation as in step 2 for the y-coordinates but make sure that no negative bev-coordinates occur
@@ -145,7 +147,8 @@ def bev_from_pcl(lidar_pcl, configs):
     ## step 1 : create a numpy array filled with zeros which has the same dimensions as the BEV map
     intensity_map = np.zeros((configs.bev_height + 1, configs.bev_width + 1))
     
-    # step 2 : re-arrange elements in lidar_pcl_cpy by sorting first by x, then y, then -z (use numpy.lexsort)
+    # step 2 : re-arrange elements in lidar_pcl_cpy (grid_cell) by sorting first by x, then y, then -z (use numpy.lexsort) to have only
+    
     lidar_pcl_cpy[lidar_pcl_cpy[:,3]>1.0,3] = 1.0
     idx_height = np.lexsort((-lidar_pcl_cpy[:, 2], lidar_pcl_cpy[:, 1], lidar_pcl_cpy[:, 0]))
     lidar_pcl_top = lidar_pcl_cpy[idx_height]
