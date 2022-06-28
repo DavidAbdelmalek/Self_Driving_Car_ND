@@ -43,6 +43,8 @@ Applies the Grayscale transform. This will return an image with only one color c
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/lane_line_detection/readme_imgs/gray.png) 
 #### 3. Apply gaussian distribtuion / blurring.
 - To suppress noise and spurios gradients
+
+
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/lane_line_detection/readme_imgs/blur.png)
 #### 4.  Apply canny transform detection
 Canny algorithm is used to detect the locations with a gradient in color change.
