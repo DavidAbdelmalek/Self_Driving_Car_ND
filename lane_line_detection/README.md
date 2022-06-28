@@ -42,7 +42,7 @@ The goal of the project is to   **detect road lines**  in an image taken from a 
 Applies the Grayscale transform. This will return an image with only one color channel.
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/lane_line_detection/readme_imgs/gray.png) 
 #### 3. Apply gaussian distribtuion / blurring.
-The reason is to suppress noise and spurios gradients
+- To suppress noise and spurios gradients
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/lane_line_detection/readme_imgs/blur.png)
 #### 4.  Apply canny transform detection
 Canny algorithm is used to detect the locations with a gradient in color change.
@@ -52,7 +52,7 @@ Canny algorithm is used to detect the locations with a gradient in color change.
 
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/lane_line_detection/readme_imgs/roi.png)
 #### 7. Apply hough transformation
-To find lines out of the dots of all the edges processed with Canny function, we should use a model of a line (y = mx + b). Then we can fit that model to the assortment of dots in the edge detection image. For that purpose we use the Hough Transform, which represents a line in the image space as a dot after transformation and a point in image space as a line. So we are looking for intersecting lines in Hough space to identify lines in image space.
+- To find lines out of the dots of all the edges processed with Canny function, we should use a model of a line (y = mx + b). Then we can fit that model to the assortment of dots in the edge detection image. For that purpose we use the Hough Transform, which represents a line in the image space as a dot after transformation and a point in image space as a line. So we are looking for intersecting lines in Hough space to identify lines in image space.
 
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/lane_line_detection/readme_imgs/hough_space.jpg)
 Image: [Udacity Self-Driving Car Nanodegree](https://github.com/udacity/self-driving-car)
