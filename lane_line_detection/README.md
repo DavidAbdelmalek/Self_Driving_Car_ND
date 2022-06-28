@@ -35,24 +35,29 @@ To meet specifications in the project, take a look at the requirements in the [p
 The goal of the project is to   **detect road lines**  in an image taken from a roof-mounted camera. Then, **create detection pipeline** that can be applied to video stream from same camera. This project applies only  **computer vision**  techniques without any machine learning involed.
 
 ### Pipeline steps:
-1. Extract frames from video streaming and process them one by one.
+#### 1. Extract frames from video streaming and process them one by one.
 
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/lane_line_detection/readme_imgs/test_imgs.png)
-2. Convert img to grayscale with one channel.
-
+#### 2. Convert img to grayscale with one channel.
+Applies the Grayscale transform. This will return an image with only one color channel.
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/lane_line_detection/readme_imgs/gray.png) 
-3. Apply gaussian distribtuion / blurring to suppress noise and spurios gradients
+#### 3. Apply gaussian distribtuion / blurring.
+The reason is to suppress noise and spurios gradients
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/lane_line_detection/readme_imgs/blur.png)
-4.  Apply canny transform detection
+#### 4.  Apply canny transform detection
+Canny algorithm is used to detect the locations with a gradient in color change.
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/lane_line_detection/readme_imgs/canny.png)
-5. Extract region (ROI):
-	Applies an image mask. Only keep the region of the image defined by the polygon formed from `vertices`. The rest of the image is set to black. `vertices` should be a numpy array of integer points.
+#### 6. Extract region (ROI):
+- Applies an image mask. Only keep the region of the image defined by the polygon formed from `vertices`. The rest of the image is set to black. `vertices` should be a numpy array of integer points.
+
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/lane_line_detection/readme_imgs/roi.png)
-6. Apply hough transformation
-	To find lines out of the dots of all the edges processed with Canny function, we should use a model of a line (y = mx + b). Then we can fit that model to the assortment of dots in the edge detection image. For that purpose we use the Hough Transform, which represents a line in the image space as a dot after transformation and a point in image space as a line. So we are looking for intersecting lines in Hough space to identify lines in image space.![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/lane_line_detection/readme_imgs/hough_space.jpg)
+#### 7. Apply hough transformation
+To find lines out of the dots of all the edges processed with Canny function, we should use a model of a line (y = mx + b). Then we can fit that model to the assortment of dots in the edge detection image. For that purpose we use the Hough Transform, which represents a line in the image space as a dot after transformation and a point in image space as a line. So we are looking for intersecting lines in Hough space to identify lines in image space.
+
+![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/lane_line_detection/readme_imgs/hough_space.jpg)
 Image: [Udacity Self-Driving Car Nanodegree](https://github.com/udacity/self-driving-car)
 
-Here is the result:
+**Here is the result:**
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/lane_line_detection/readme_imgs/hough.png)
 
 ### Final result
