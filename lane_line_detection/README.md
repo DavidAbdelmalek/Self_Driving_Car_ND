@@ -39,7 +39,8 @@ The goal of the project is to   **detect road lines**  in an image taken from a 
 
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/lane_line_detection/readme_imgs/test_imgs.png)
 #### 2. Convert img to grayscale with one channel.
-Applies the Grayscale transform. This will return an image with only one color channel.
+- Applies the Grayscale transform. This will return an image with only one color channel.
+
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/lane_line_detection/readme_imgs/gray.png) 
 #### 3. Apply gaussian distribtuion / blurring.
 - To suppress noise and spurios gradients
@@ -47,7 +48,8 @@ Applies the Grayscale transform. This will return an image with only one color c
 
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/lane_line_detection/readme_imgs/blur.png)
 #### 4.  Apply canny transform detection
-Canny algorithm is used to detect the locations with a gradient in color change.
+- Canny algorithm is used to detect the locations with a gradient in color change.
+
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/lane_line_detection/readme_imgs/canny.png)
 #### 6. Extract region (ROI):
 - Applies an image mask. Only keep the region of the image defined by the polygon formed from `vertices`. The rest of the image is set to black. `vertices` should be a numpy array of integer points.
