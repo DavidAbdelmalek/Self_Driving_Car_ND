@@ -34,6 +34,8 @@ To meet specifications in the project, take a look at the requirements in the [p
 
 The goal of the project is to   **detect road lines**  in an image taken from a roof-mounted camera. Then, **create detection pipeline** that can be applied to video stream from same camera. This project applies only  **computer vision**  techniques without any machine learning involed.
 
+![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/lane_line_detection/readme_imgs/gif.gif)
+
 ### Pipeline steps:
 #### 1. Extract frames from video streaming and process them one by one.
 
