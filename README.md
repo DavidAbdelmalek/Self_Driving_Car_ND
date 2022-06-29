@@ -5,14 +5,14 @@
 
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/cover.png)
 
-![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sponsors.png)
-Image: [Udacity Self-Driving Car Nanodegree](https://github.com/udacity/self-driving-car)
+
+- Image: [Udacity Self-Driving Car Nanodegree](https://github.com/udacity/self-driving-car)
 
   
 *Udacity Self-Driving Car Engineer Nano Degree projects.*
 
   
-In this program, I learnt the techniques that power self-driving cars across the full stack of a vehicle’s autonomous capabilities. Using Deep Learning with radar and lidar sensor fusion, I also trained the vehicle to detect and identify its surroundings to inform navigation.
+In this program, I learnt the techniques that power self-driving cars across the full stack of a vehicle’s autonomous capabilities. Using Deep Learning with radar and lidar sensor fusion, I also trained the vehicle to detect and identify its surroundings to inform navigation. This program is co-authored with Mercedes Benz and Waymo
 
 
 ## Projects:
@@ -47,7 +47,7 @@ The goal of the project is to **detect road lines** in an image taken from a roo
 
 #### Demo
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/lane_line_detection/readme_imgs/gif.gif)
-
+---
 ### [Traffic Sign Classifier](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/tree/main/german_traffic_sign_classifier)
 
 Using deep neural networks and CNN to classific german traffic signs using TensorFlow. Perform image pre-processing, data augmentation, and validation to guard against overfitting. After several experiments using different architectures, our select model is inspired by LeNet [1] architecture but fine-tuned to match our goal.
@@ -58,7 +58,7 @@ Using deep neural networks and CNN to classific german traffic signs using Tenso
 #### Demo
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/german_traffic_sign_classifier/images/display/predict_img_1_Correct.png)
 
-
+---
 ### [Object detection in urban enviroment](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/blob/main/object_detection_urban_environment/project_writeup.md#object-detection-in-an-urban-environment)
 
 Accurately detecting the surrounding objects can help autonomous vehicles react and prevent potential collisions. In this project, we use convolutional neural network approaches to detect and classify objects using data from  [Waymo Open dataset](https://waymo.com/open/), which provides driving scenes, will be used to train our neural network models. The dataset contains images of urban environments containing annotated cyclists, pedestrians and vehicles. I trained SSD_ResNet_50 using default hyperparamters and apply data augmentation to avoid overfitting.
@@ -67,7 +67,7 @@ Accurately detecting the surrounding objects can help autonomous vehicles react 
 
 #### Demo
 [![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/animation.gif)](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/blob/main/object_detection_urban_environment/images/animation.gif)
-
+---
 ### [Sensor Fusion: 3D Object detection](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/blob/main/sensor_fusion_and_tracking/writeup_midterm.md#3d-object-detection)
 
 In this project, we first load and process 3D lidar point clouds and then use a deep-learning approach to detect vehicles in LiDAR data ([Waymo Open dataset](https://waymo.com/open/)) based on a birds-eye view perspective of the 3D point-cloud.  We then used precision and recall metrics to evaluate our model.
@@ -76,6 +76,7 @@ In this project, we first load and process 3D lidar point clouds and then use a 
 
 #### Demo
 [![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/3d_object_detection.gif)](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/blob/main/sensor_fusion_and_tracking/img/3d_object_detection.gif)
+---
 ### [Sensor Fusion: 3D Object Tracking](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/blob/main/sensor_fusion_and_tracking/writeup_final.md#3d-object-tracking)
 
 
