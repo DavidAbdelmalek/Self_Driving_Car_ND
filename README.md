@@ -81,11 +81,20 @@ In this project, we first load and process 3D lidar point clouds and then use a 
 -   **Keywords:**  Python, CNN, Object detection, LiDar, Sensor Fusion, Bird eye, Bounding boxes, Object Detection, Point cloud.
 
 #### Demo
-[![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/3d_object_detection.gif)](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/blob/main/sensor_fusion_and_tracking/img/3d_object_detection.gif)
+![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/3d_object_detection.gif)
 --- 
+
 ### [Sensor Fusion: 3D Object Tracking](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/blob/main/sensor_fusion_and_tracking/writeup_final.md#3d-object-tracking)
 
+After fusing camera and lidar detections and detecting 3D objects, In this project we focus on multi-object tracking in real-world scenarios using Extended Kalman Filter. Along with creating tracking managemenet, updating and deleting tracks, assigning measurements to tracks with data association techniques, and managing several tracks simultaneously. 
+
+-   **Keywords:**  Python, multi-object tracking, Object detection, Kalman Filter, Sensor Fusion, Point cloud, RSME.
+
+#### Demo
+![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/3d_object_tracking.gif)
+--- 
 
 
-
+## Certificate 
+![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/udacity_certificate_graduation.png)
 [1]  [Traffic Sign Recognition with Multi-Scale Convolutional Networks](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf)
