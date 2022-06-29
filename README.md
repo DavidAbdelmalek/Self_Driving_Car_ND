@@ -73,6 +73,7 @@ Accurately detecting the surrounding objects can help autonomous vehicles react 
 
 #### Demo
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/object_detection_urban_environment/images/animation.gif)
+
 ---
 ### [Sensor Fusion: 3D Object detection](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/blob/main/sensor_fusion_and_tracking/writeup_midterm.md#3d-object-detection)
 
@@ -82,6 +83,7 @@ In this project, we first load and process 3D lidar point clouds and then use a 
 
 #### Demo
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/3d_object_detection.gif)
+
 --- 
 
 ### [Sensor Fusion: 3D Object Tracking](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/blob/main/sensor_fusion_and_tracking/writeup_final.md#3d-object-tracking)
@@ -91,7 +93,9 @@ After fusing camera and lidar detections and detecting 3D objects, In this proje
 -   **Keywords:**  Python, multi-object tracking, Object detection, Kalman Filter, Sensor Fusion, Point cloud, RSME.
 
 #### Demo
+
 ![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/3d_object_tracking.gif)
+
 --- 
 
 
