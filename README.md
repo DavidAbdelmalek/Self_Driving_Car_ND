@@ -49,9 +49,8 @@ The goal of the project is to **detect road lines** in an image taken from a roo
 #### Demo
 
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/lane_line_detection/readme_imgs/gif.gif" width="500">
-</p>
+![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/lane_line_detection/readme_imgs/gif.gif)
+
 
 ---
 
@@ -97,10 +96,8 @@ After fusing camera and lidar detections and detecting 3D objects, In this proje
 
 #### Demo
 
+![](https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/3d_object_tracking.gif)
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/sensor_fusion_and_tracking/img/3d_object_tracking.gif" width="500">
-</p>
 
 --- 
 
@@ -108,7 +105,7 @@ After fusing camera and lidar detections and detecting 3D objects, In this proje
 ## Certificate 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/udacity_certificate_graduation.png" width="500">
+  <img src="https://raw.githubusercontent.com/DavidAbdelmalek/Self_Driving_Car_ND/main/udacity_certificate_graduation.png" width="500" height="400">
 </p>
 
 [1]  [Traffic Sign Recognition with Multi-Scale Convolutional Networks](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf)
