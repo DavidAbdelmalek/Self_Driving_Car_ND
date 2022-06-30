@@ -34,7 +34,7 @@ In this program, I learnt the techniques that power self-driving cars across the
 
 - Motion Planning
 
-- Control and Trajectory tracking for autonomous vehicles
+- Control and Trajectory tracking
 
 ---
 
@@ -100,6 +100,39 @@ After fusing camera and lidar detections and detecting 3D objects, In this proje
 
 
 --- 
+### [Scan Matching Localization](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/tree/main/scan_match_localization#scan-matching-localization)
+
+The goal of the project is  to localize a car driving in simulation for at least 170m from the starting position and never exceeding a distance pose error of 1.2m. The simulation car is equipped with a lidar, provided by the simulator at regular intervals are lidar scans. There is also a point cloud map already available, and by using point registration matching between the map and scans localization for the car can be accomplished. This point cloud map is extracted from the [CARLA simulator](https://carla.org/).
+
+-   **Keywords:**  Python, CARLA, Localization, Point cloud.
+
+#### Demo
+
+https://user-images.githubusercontent.com/22666537/145483935-9ef773b4-557c-405c-8866-0d2ad1aa2140.mov
+
+--- 
+### [Motions planning](https://github.com/DavidAbdelmalek/Self_Driving_Car_ND/tree/main/motion_planning_and_decision#motion-planning-and-decision-making-for-autonomous-vehicles)
+
+I implemented two main components of a traditional hierarchical planner: 
+The Behavior Planner and the Motion Planner.
+
+-   Avoid static objects (cars, bicycles and trucks) parked on the side of the road
+-   Handle any type of intersection (3-way, 4-way intersections and roundabouts) by STOPPING in all of them (by default)
+-   Track the centerline on the traveling lane.
+
+To accomplish this, I implemented:
+
+-   Behavioral planning logic using Finite State Machines - FSM
+-   Static objects Collision checking.
+-   Path and Trajectory generation using Cubic Spirals
+-   Best trajectory selection though a cost function evaluation. This cost function will mainly perform a collision check and a proximity check to bring cost higher as we get closer or collide with objects but maintaining a bias to stay closer to the lane center line.
+
+-   **Keywords:**  Python, Finite State Machines, Motion planning, Behavior Planner.
+
+#### Demo
+https://user-images.githubusercontent.com/22666537/146562398-8f294c7f-97eb-4fd0-92d4-a7f1163cb504.mov
+
+
 
 
 ## Certificate 
